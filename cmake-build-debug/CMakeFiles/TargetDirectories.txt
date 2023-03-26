@@ -1,0 +1,3 @@
+C:/Users/Konto1/CLionProjects/Coder_Decoder/cmake-build-debug/CMakeFiles/Coder_Decoder.dir
+C:/Users/Konto1/CLionProjects/Coder_Decoder/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Konto1/CLionProjects/Coder_Decoder/cmake-build-debug/CMakeFiles/rebuild_cache.dir
