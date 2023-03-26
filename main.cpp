@@ -19,6 +19,19 @@ string decrypt(string key, string message_open, int length){
 
 string encrypt(string key, string message_closed){
 
+    string message_open = "";
+
+    int length = key.length();
+
+    for(int i = 0; i < message_closed.length(); i++) {
+
+        int key_letter = key[i % length];
+        int letter = message_closed[i];
+        int letter_code = (letter - key_letter + 128) % 128;
+        message_open += letter_code;
+    }
+
+    return message_open;
 }
 
 string generate_key(int length){
@@ -75,7 +88,7 @@ int main() {
                 cin >> message_open;
 
                 message_closed = decrypt(key, message_open, length);
-                cout << endl << "The message is:" << message_closed << endl << endl;
+                cout << endl << "The message is: " << message_closed << endl << endl;
 
             } else if (input_2 == 2){
 
@@ -89,7 +102,7 @@ int main() {
                 cin >> message_open;
 
                 message_closed = decrypt(key, message_open, length);
-                cout << endl << "The message is:" << message_closed << endl << endl;
+                cout << endl << "The message is: " << message_closed << endl << endl;
 
             }
         }
@@ -101,6 +114,8 @@ int main() {
             cout << endl << "Please enter the message:" << endl << endl;
             cin >> message_closed;
 
+            message_open = encrypt(key, message_closed);
+            cout << endl << "The message is: " << message_open << endl << endl;
         }
 
         }
